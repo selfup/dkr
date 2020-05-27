@@ -23,7 +23,7 @@ Here you will be in a shell.
 
 Example of hostname manipulation of dkt container instead of the docker container:
 
-```bash
+```
 dkr $ docker-compose exec --privileged dkr ./dkr run /bin/sh
 2020/05/27 23:49:24 run() executing [/bin/sh]
 2020/05/27 23:49:24 fork() executing [/bin/sh]
