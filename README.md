@@ -21,7 +21,7 @@ docker for docker containers?
 
 Here you will be in a shell.
 
-Example of hostname manipulation of dkt container instead of the docker container:
+Example of hostname manipulation of dkr container instead of the docker container:
 
 ```
 dkr $ docker-compose exec --privileged dkr ./dkr run /bin/sh
