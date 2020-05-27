@@ -4,7 +4,7 @@ docker for docker containers?
 
 ### deps
 
-1. golang
+1. go ([golang](https://golang.org/))
 1. `./scripts/fs.sh` (this pulls minirootfs)
 
 ### build
