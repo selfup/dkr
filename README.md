@@ -2,6 +2,11 @@
 
 docker for docker containers?
 
+### deps
+
+1. golang
+1. `./scripts/fs.sh` (this pulls minirootfs)
+
 ### build
 
 `./scripts/build.sh`
