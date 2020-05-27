@@ -1,0 +1,9 @@
+alpine-*
+scripts
+.vscode
+.git
+.gitignore
+Dockerfile
+main.go
+.editorconfig
+cmd

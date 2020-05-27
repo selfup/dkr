@@ -1,0 +1,9 @@
+# project
+dkr
+dkrd
+minirootfs
+alpine-*
+
+# dotfiles
+.env
+.DS_Store
