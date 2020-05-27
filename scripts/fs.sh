@@ -4,6 +4,7 @@ set -e
 
 alpine_x86_releases="http://dl-cdn.alpinelinux.org/alpine/v3.11/releases/x86_64"
 mini_root_fs="alpine-minirootfs-3.11.6-x86_64.tar.gz"
+
 if [[ -d minirootfs && -f $mini_root_fs && -f $miniroot_fs.sha256 ]]
 then
   echo 'minirootfs is already downloaded, valid, and configured'
