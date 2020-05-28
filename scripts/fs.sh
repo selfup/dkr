@@ -20,7 +20,7 @@ inferred_sha_sum=$(shasum -a 256 $mini_root_fs)
 
 if [[ $given_sha_sum != $inferred_sha_sum ]]
 then
-  echo 'sah256 sums do not match'
+  echo 'sha256 sums do not match'
 
   rm $mini_root_fs*
 
