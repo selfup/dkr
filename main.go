@@ -8,13 +8,17 @@ import (
 )
 
 func main() {
-	switch os.Args[1] {
-	case "run":
-		run()
-	case "fork":
-		fork()
-	default:
-		panic("nope")
+	if len(os.Args) > 1 {
+		switch os.Args[1] {
+		case "run":
+			run()
+		case "fork":
+			fork()
+		default:
+			log.Fatalln("run or fork are the only commands for dkr")
+		}
+	} else {
+		log.Fatalln("no arguments found, use run or fork to boot dkr")
 	}
 }
 
@@ -43,7 +47,25 @@ func fork() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	chrootDir := os.Getenv("HOME") + "minirootfs"
+	var home string
+	var chrootDir string
+
+	minirootfsHome := os.Getenv("MINIROOTFS_HOME")
+	if minirootfsHome != "" {
+		home = minirootfsHome
+		chrootDir = home + "/minirootfs"
+	} else {
+		home = os.Getenv("HOME")
+
+		if home == "/" {
+			chrootDir = home + "minirootfs"
+		} else {
+			chrootDir = home + "/minirootfs"
+		}
+	}
+
+	log.Println("chrootDir:", chrootDir)
+
 	attempt(
 		"fork() Chroot",
 		syscall.Chroot(chrootDir),

@@ -17,7 +17,7 @@ docker for docker containers?
 
 ### run dkr in container host
 
-`docker-compose exec --priviledged dkr ./dkr run /bin/sh`
+`docker-compose exec --privileged dkr ./dkr run /bin/sh`
 
 Here you will be in a shell.
 
@@ -38,12 +38,25 @@ dkr $ docker-compose exec --privileged dkr ./dkr run /bin/sh
 2020/05/27 23:51:17 fork() executing [/bin/sh]
 / # hostname
 f60818cfd391
-/ # 
+/ #
 ```
 
 See how the running `docker-compose up --build` continainer still has the same hostname?
 
 Yea we did it!!
+
+### linux
+
+If you are already on linux just:
+
+```bash
+# pulls minitrootfs
+./scripts/fs.sh
+# builds dkrd and dkr linux bins
+./scripts/build.sh
+
+sudo MINIROOTFS_HOME=$(pwd) ./dkr /bin/bash
+```
 
 ### license
 
