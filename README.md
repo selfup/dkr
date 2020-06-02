@@ -1,6 +1,8 @@
 # dkr
 
-docker for docker containers?
+Docker for Docker containers?
+
+This project was inspired by [Liz Rice](https://www.lizrice.com/)
 
 ### deps
 
